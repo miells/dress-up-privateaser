@@ -8,14 +8,14 @@
     const template = actors.map(actor => {
       return `
         <div class="actor">
-          <span>${actor.who}</span>
-          <span>${actor.type}</span>
-          <span>${actor.amount}</span>
+          <div class="cell">${actor.who}</div>
+          <div class="cell">${actor.type}</div>
+          <div class="cell">${actor.amount}</div>
         </div>
       `;
     }).join('');
 
-    div.innerHTML = template;
+    div.innerHTML = '<div class="title">Invoices</div>' + template;
     fragment.appendChild(div);
     document.querySelector('#actors').innerHTML = '';
     document.querySelector('#actors').appendChild(fragment);
